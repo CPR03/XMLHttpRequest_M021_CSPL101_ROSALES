@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIOS Method CSPL101 ROSALES</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <h1 class = "setup"></h1>
+    <h2 class = "punchline"></h2>
+
+    <script>
+        axios.get("https://official-joke-api.appspot.com/random_joke")
+            .then(response => {
+                jokes = response.data
+                console.log(jokes)
+                document.querySelector(".setup").innerHTML = "Setup: " + jokes.setup
+                document.querySelector(".punchline").innerHTML = "Punchline: " + jokes.punchline
+            })
+    </script>
+</body>
+</html>
